@@ -31,3 +31,13 @@ variable "location" {
     default     = "westeurope"
     description = "The Azure Region in which all resources in this example should be provisioned"
 }
+
+variable "default_tags" {
+  type        = map(string)
+  description = "set of default tags to apply everywhere"
+}
+
+variable "environment" {
+  description = "Name of the environment of the resources"
+  type        = string
+}
