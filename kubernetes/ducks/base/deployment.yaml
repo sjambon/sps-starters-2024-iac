@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ducks
-        image: <acr-login-server>/ducks:latest # Pas deze aan naar jouw ACR en image tag
+        image: spscontainerregistryae.azurecr.io/ducks/backend:46d0d96126ce47fdf7d766d4ad7d74ba7b63c647
         ports:
         - containerPort: 80
         env:
