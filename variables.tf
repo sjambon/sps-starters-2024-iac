@@ -44,3 +44,14 @@ variable "environment" {
   description = "Name of the environment of the resources"
   type        = string
 }
+
+variable "github_token" {
+  description = "Github secret token"
+  type        = string
+  sensitive   = true
+}
+
+variable "sku" {
+  default     = "Basic"
+  description = "The pricing tier or performance level for the Azure resource. Common values include 'Basic', 'Standard', and 'Premium'."
+}

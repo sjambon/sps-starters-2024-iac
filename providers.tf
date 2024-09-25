@@ -10,6 +10,11 @@ terraform {
       source  = "Azure/azapi"
       version = "2.0.0-beta"
     }
+    # Github provider
+    github = {
+      source  = "integrations/github"
+      version = "~> 6.0"
+    }
   }
 }
 
@@ -32,4 +37,8 @@ provider "helm" {
     client_key             = base64decode(azurerm_kubernetes_cluster.sps_k8_cluster.kube_config[0].client_key)
     cluster_ca_certificate = base64decode(azurerm_kubernetes_cluster.sps_k8_cluster.kube_config[0].cluster_ca_certificate)
   }
+}
+
+provider "github" {
+  token = var.github_token
 }
