@@ -1,38 +1,41 @@
 variable "subscription_id" {
-    description = "The subscription for the Service Principal"
-    type        = string
-    sensitive   = true
+  description = "The subscription for the Service Principal"
+  type        = string
+  sensitive   = true
 }
 
 variable "client_id" {
-    description = "The client ID for the Service Principal"
-    type        = string
-    sensitive   = true
+  description = "The client ID for the Service Principal"
+  type        = string
+  sensitive   = true
 }
 
 variable "client_secret" {
-    description = "The client secret for the Service Principal"
-    type        = string
-    sensitive   = true
+  description = "The client secret for the Service Principal"
+  type        = string
+  sensitive   = true
 }
 
 variable "tenant_id" {
-    description = "The tenant ID for the Service Principal"
-    type        = string
-    sensitive   = true
+  description = "The tenant ID for the Service Principal"
+  type        = string
+  sensitive   = true
 }
 
 variable "prefix" {
-    default     = "sps"
-    description = "A prefix used for all resources in this example"
+  default     = "sps"
+  description = "A prefix used for all resources in this example"
 }
 
 variable "location" {
-    default     = "westeurope"
-    description = "The Azure Region in which all resources in this example should be provisioned"
+  default     = "westeurope"
+  description = "The Azure Region in which all resources in this example should be provisioned"
 }
 
 variable "default_tags" {
+  default = {
+    "name" = "value"
+  }
   type        = map(string)
   description = "set of default tags to apply everywhere"
 }

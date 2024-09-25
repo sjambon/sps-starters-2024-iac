@@ -16,7 +16,7 @@ resource "azurerm_automation_account" "sps_automation_account" {
   resource_group_name = azurerm_resource_group.sps_k8.name
   location            = var.location
   sku_name            = "Basic"
-  tags     = local.default_tags
+  tags                = local.default_tags
 }
 
 data "azapi_resource_action" "sps_resource_action" {
@@ -35,7 +35,7 @@ resource "azurerm_kubernetes_cluster" "sps_k8_cluster" {
 
   default_node_pool {
     name       = "default"
-    node_count = 1
+    node_count = 2
     vm_size    = "Standard_DS2_v2"
   }
 
