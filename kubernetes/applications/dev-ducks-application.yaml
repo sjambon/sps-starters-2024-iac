@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sps-starters-2024-ducks
+  namespace: argocd
+spec:
+  destination:
+    namespace: ducks-dev
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: 'https://github.com/sjambon/sps-starters-2024-iac'
+    targetRevision: dev
+    path: kubernetes/ducks
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
