@@ -27,6 +27,3 @@ output "host" {
   sensitive = true
 }
 
-output "argocd_server_external_ip" {
-  value = data.kubernetes_service.argocd_server.status.load_balancer_ingress[0].ip 
-} 

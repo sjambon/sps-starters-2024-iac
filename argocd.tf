@@ -17,11 +17,3 @@ resource "helm_release" "argocd" {
 
   values = [file("values/argocd.yaml")]
 }
-
-data "kubernetes_service" "argocd_server" {
-  metadata {
-    name      = "argocd-server"
-    namespace = helm_release.argocd.namespace
-  }
-  depends_on = [helm_release.argocd]
-}

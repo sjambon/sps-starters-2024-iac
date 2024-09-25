@@ -28,3 +28,9 @@ resource "github_actions_secret" "add_admin_username" {
   secret_name     = "USERNAME"
   plaintext_value = azurerm_container_registry.sps_cr.admin_username
 }
+
+resource "azurerm_role_assignment" "aks_acr_pull" {
+  scope                = azurerm_container_registry.sps_cr.id
+  role_definition_name = "AcrPull"
+  principal_id         = azurerm_kubernetes_cluster.sps_k8_cluster.identity[0].principal_id
+}
